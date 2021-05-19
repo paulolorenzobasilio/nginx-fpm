@@ -2,7 +2,7 @@ version: '3'
 services:
   #PHP Service
   vimily_php:
-    image: vimily/laravel
+    image: vimily/laravel:latest-dev
     container_name: vimily_php
     restart: unless-stopped
     tty: true
@@ -25,7 +25,7 @@ services:
     restart: unless-stopped
     tty: true
     ports:
-      - "8000:80"
+      - "8001:80"
       - "443:443"
     volumes:
       - ./:/var/www:z
@@ -40,7 +40,7 @@ services:
     restart: unless-stopped
     tty: true
     ports:
-      - "3306:3306"
+      - "3307:3306"
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: 1
       MYSQL_DATABASE: laravel
